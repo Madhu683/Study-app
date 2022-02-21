@@ -1,7 +1,7 @@
 # Cover Screen
 ![cover](https://github.com/Madhu683/Study-app/blob/master/assets/Images/Cover%20Screen.png)
 
-##Linear gradient
+## Linear gradient
 <code> $ expo install expo-linear-gradient </code>
 
 ```javascript
