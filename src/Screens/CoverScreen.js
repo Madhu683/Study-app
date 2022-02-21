@@ -1,6 +1,6 @@
-import React from 'react'
-import {ImageBackground,View,Dimensions,Text, Button,Image, StatusBar, TouchableOpacity} from 'react-native'
-import { LinearGradient } from 'expo-linear-gradient'
+import React from 'react';
+import {ImageBackground,View,Dimensions,Text, Button,Image, StatusBar,StyleSheet,TouchableOpacity} from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { 
     Poppins_100Thin,
     Poppins_100Thin_Italic,
@@ -62,41 +62,19 @@ function CoverScreen() {
                 locations={[-0.03, 0.77]}
                 colors={['rgba(82, 182, 223, 0.2)','#4178D4']}
                 style={styles.BackgoundLinearGradient}>
-              <View
-              style={styles.LogoView}>
-              <Image source={require("./../../assets/Images/Symbol.png")}
-               style={styles.LogoImage}/>
-              <Text style={styles.LogoTitle}>Study</Text>
-              </View>
-              <View
-              style={styles.SubContainer}>
-                  <Text
-                  style={styles.Headline}
-                  >
-                      Hello and
-                  </Text>
-                  <Text
-                  style={styles.Headline}
-                  >
-                      welcome here!
-                  </Text>
-                  <Text
-                  style={styles.Subline1}
-                  >Get an overview of how you are performing
-
-                  </Text>
-                  <Text
-                  style={styles.Subline2}
-                  >and motivate yourself to achieve even moew.
-
-                  </Text>
-                  <TouchableOpacity
-               style={styles.Button}>
-                  <Text
-                  style={styles.ButtonText}
-                  >Let's start</Text>
-              </TouchableOpacity>
-              </View>
+                       <View style={styles.LogoView}>
+                            <Image source={require("./../../assets/Images/Symbol.png")} style={styles.LogoImage}/>
+                            <Text style={styles.LogoTitle}>Study</Text>
+                       </View>
+                       <View style={styles.SubContainer}>
+                             <Text style={styles.Headline}>Hello and</Text>
+                             <Text style={styles.Headline}>welcome here!</Text>
+                             <Text style={styles.Subline1}>Get an overview of how you are performing</Text>
+                             <Text style={styles.Subline2}>and motivate yourself to achieve even moew.</Text>
+                             <TouchableOpacity style={styles.Button}>
+                                     <Text style={styles.ButtonText}>Let's start</Text>
+                             </TouchableOpacity>
+                       </View>
               
               </LinearGradient>
            </ImageBackground>
@@ -106,10 +84,12 @@ function CoverScreen() {
 }
 
 const styles = StyleSheet.create({
+
     Container:{
         flex:1,
         backgroundColor:'#FFFFFF',
     },
+
     BackgoundImage:{
         flex:1,
         position:'absolute',
@@ -118,6 +98,7 @@ const styles = StyleSheet.create({
         left:0,
         top:0,
     },
+
     BackgoundLinearGradient:{
         flex:1,          
         width:Dimensions.get('screen').width,
@@ -125,20 +106,24 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
     },
+
     LogoView:{
     position:'absolute',
     flexDirection:'row',
     top:40,
    },
+
    LogoImage:{
       margin:5,
    },
+
    LogoTitle:{
     margin:5,
     fontFamily:'Poppins_500Medium',
     fontSize:15,
     letterSpacing:0.2,
    },
+
    SubContainer:{
     flex:1,             
     position:'absolute',
@@ -150,6 +135,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
    },
+
    Headline:{
     fontFamily:'Poppins_600SemiBold',
     fontSize:32,
@@ -158,6 +144,7 @@ const styles = StyleSheet.create({
     lineHeight:42,
     color:'#FFFFFF',
    },
+
    Subline1:{
     marginTop:27,
     fontSize:13,
@@ -168,6 +155,7 @@ const styles = StyleSheet.create({
     color:'#FFFFFF',
     opacity:0.6,   
    },
+
    Subline2:{
     fontSize:13,
     fontFamily:'Poppins_400Regular',
@@ -177,6 +165,7 @@ const styles = StyleSheet.create({
     color:'#FFFFFF',
     opacity:0.6,   
    },
+
    Button:{
     height:56,
     width:149,
@@ -186,6 +175,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     top:40,
    },
+
    ButtonText:{
     fontFamily:'Poppins_600SemiBold',   
     color:"#FFFFFF",
