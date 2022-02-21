@@ -50,147 +50,50 @@ function CoverScreen() {
         return <AppLoading/>
     };
   return (
-    <View style={{flex:1,backgroundColor:'#FFFFFF'}}>
+    <View style={styles.Container}>
         <StatusBar hidden={true}/>
            <ImageBackground
            source={require('./../../assets/Images/IMAGE.png')}
-           style={{
-               flex:1,
-               position:'absolute',
-               width:Dimensions.get('screen').width,
-               height:Dimensions.get('screen').height,
-               left:0,
-               top:0,
-           }}
+           style={styles.BackgoundImage}
            >
              <LinearGradient
                 useAngle={true}
                 angle={180}
                 locations={[-0.03, 0.77]}
                 colors={['rgba(82, 182, 223, 0.2)','#4178D4']}
-                style={{
-                    flex:1,
-                    
-                    width:Dimensions.get('screen').width,
-                    height:Dimensions.get('screen').height,
-                   justifyContent:'center',
-                    alignItems:'center',
-              }}>
+                style={styles.BackgoundLinearGradient}>
               <View
-              style={{
-                  position:'absolute',
-                  flexDirection:'row',
-                  top:40,
-
-              }}>
+              style={styles.LogoView}>
               <Image source={require("./../../assets/Images/Symbol.png")}
-               style={{
-                   margin:5,
-               }}/>
-              <Text style={{
-                  margin:5,
-                  fontFamily:'Poppins_500Medium',
-                  fontSize:15,
-                  letterSpacing:0.2,
-              }}>Study</Text>
+               style={styles.LogoImage}/>
+              <Text style={styles.LogoTitle}>Study</Text>
               </View>
               <View
-              style={{
-                  flex:1,
-                  
-               position:'absolute',
-               left:24,
-               right:24,
-               top:517,
-               width:Dimensions.get('screen').width-48,
-               height:144,
-               justifyContent:'center',
-               alignItems:'center',
-              }}>
+              style={styles.SubContainer}>
                   <Text
-                  style={
-                      {  /* Headline */
-
-
-                         fontFamily:'Poppins_600SemiBold',
-                         fontSize:32,
-                         fontWeight:'600',
-                         fontStyle:'normal',
-                         lineHeight:42,
-                         color:'#FFFFFF'
-
-                         
-
-                      }
-                  }
+                  style={styles.Headline}
                   >
                       Hello and
                   </Text>
                   <Text
-                  style={
-                      {  fontFamily:'Poppins_600SemiBold',
-                         fontSize:32,
-                         fontWeight:'600',
-                         fontStyle:'normal',
-                         lineHeight:42,
-                         color:'#FFFFFF'
-                      }
-                  }
+                  style={styles.Headline}
                   >
                       welcome here!
                   </Text>
                   <Text
-                  style={{
-                      marginTop:27,
-                      fontSize:13,
-                      fontFamily:'Poppins_400Regular',
-                      fontWeight:'normal',
-                      fontStyle:'normal',
-                      lineHeight:22,
-                      color:'#FFFFFF',
-                      opacity:0.6,
-
-                  }}
+                  style={styles.Subline1}
                   >Get an overview of how you are performing
 
                   </Text>
                   <Text
-                  style={{
-                      fontSize:13,
-                      fontFamily:'Poppins_400Regular',
-                      fontWeight:'normal',
-                      fontStyle:'normal',
-                      lineHeight:22,
-                      color:'#FFFFFF',
-                      opacity:0.6,
-
-                  }}
+                  style={styles.Subline2}
                   >and motivate yourself to achieve even moew.
 
                   </Text>
                   <TouchableOpacity
-               style={{
-                   
-                   height:56,
-                   width:149,
-                   backgroundColor:'#52B6DF',
-                   borderRadius:10,
-                   alignItems:'center',
-                   justifyContent:'center',
-                   top:40,
-                   
-               }}>
+               style={styles.Button}>
                   <Text
-                  style={
-                      {
-                       fontFamily:'Poppins_600SemiBold',   
-                       color:"#FFFFFF",
-                       fontSize:17,
-                       fontWeight:'600',
-                       lineHeight:24,
-
-                      }
-                  }
+                  style={styles.ButtonText}
                   >Let's start</Text>
               </TouchableOpacity>
               </View>
@@ -202,7 +105,7 @@ function CoverScreen() {
   )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     Container:{
         flex:1,
         backgroundColor:'#FFFFFF',
