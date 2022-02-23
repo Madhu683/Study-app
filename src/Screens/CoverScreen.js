@@ -23,7 +23,7 @@ import {
   } from '@expo-google-fonts/poppins';
   import {useFonts} from 'expo-font';
   import AppLoading from 'expo-app-loading';
-function CoverScreen() {
+function CoverScreen({navigation}) {
 
     let [fontsLoaded,error] = useFonts({
         Poppins_100Thin,
@@ -71,9 +71,11 @@ function CoverScreen() {
                              <Text style={styles.Headline}>welcome here!</Text>
                              <Text style={styles.Subline1}>Get an overview of how you are performing</Text>
                              <Text style={styles.Subline2}>and motivate yourself to achieve even moew.</Text>
-                             <TouchableOpacity style={styles.Button}>
+                             <TouchableOpacity style={styles.Button}
+                                               onPress={()=>navigation.navigate('Onboarding')}>
                                      <Text style={styles.ButtonText}>Let's start</Text>
                              </TouchableOpacity>
+                             
                        </View>
               
               </LinearGradient>
