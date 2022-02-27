@@ -1,9 +1,57 @@
 import React from 'react';
 import {Text,View,Image,ImageBackground,} from 'react-native';
-import Swiper from 'react-native-swiper';
+import Swiper from 'react-native-swiper/src';
 import { LinearGradient } from 'expo-linear-gradient';
+import { 
+  Poppins_100Thin,
+  Poppins_100Thin_Italic,
+  Poppins_200ExtraLight,
+  Poppins_200ExtraLight_Italic,
+  Poppins_300Light,
+  Poppins_300Light_Italic,
+  Poppins_400Regular,
+  Poppins_400Regular_Italic,
+  Poppins_500Medium,
+  Poppins_500Medium_Italic,
+  Poppins_600SemiBold,
+  Poppins_600SemiBold_Italic,
+  Poppins_700Bold,
+  Poppins_700Bold_Italic,
+  Poppins_800ExtraBold,
+  Poppins_800ExtraBold_Italic,
+  Poppins_900Black,
+  Poppins_900Black_Italic 
+} from '@expo-google-fonts/poppins';
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from '@react-navigation/native';
 
-function Onboarding({params}) {
+function Onboarding({navigation}) {
+
+  let [fontsLoaded,error] = useFonts({
+    Poppins_100Thin,
+Poppins_100Thin_Italic,
+Poppins_200ExtraLight,
+Poppins_200ExtraLight_Italic,
+Poppins_300Light,
+Poppins_300Light_Italic,
+Poppins_400Regular,
+Poppins_400Regular_Italic,
+Poppins_500Medium,
+Poppins_500Medium_Italic,
+Poppins_600SemiBold,
+Poppins_600SemiBold_Italic,
+Poppins_700Bold,
+Poppins_700Bold_Italic,
+Poppins_800ExtraBold,
+Poppins_800ExtraBold_Italic,
+Poppins_900Black,
+Poppins_900Black_Italic 
+})
+
+if(!fontsLoaded){
+    return <AppLoading/>
+};
   return (
     <View style={{height:'100%',width:'100%',backgroundColor:'white'}}>
          <View style={{height:'55%',width:'100%',backgroundColor:'yellow'}}>
@@ -30,6 +78,7 @@ function Onboarding({params}) {
                                       width:32,
                                       marginRight:5}}/>
                        <Text style={{fontSize:21.6,
+                                     fontFamily:'Poppins_500Medium',
                                      fontStyle:'normal',
                                      fontWeight:'500',
                                      letterSpacing:0.26,
@@ -44,15 +93,16 @@ function Onboarding({params}) {
                    style={{height:'100%',width:'100%'}}
                    showsButtons={true}
                    showsPagination={true}
+                   autoplay={true}
                    paginationStyle={{position:'absolute',
                                     bottom:120}}
                    buttonWrapperStyle={{position:'absolute',
                                         color:'black',
-                                        
                                          }}
-                   prevButton={<View style={{bottom:-120,left:10,alignItems:'center',justifyContent:'center'}} >
+                   prevButton={<View onPress={()=>NavigationContainer.navigate('SignUp')}style={{bottom:-120,left:10,alignItems:'center',justifyContent:'center'}} >
                                       <Text style={{fontStyle:'normal',
                                                     fontWeight:'500',
+                                                    fontFamily:'Poppins_500Medium',
                                                     fontSize:15,
                                                     lineHeight:25,
                                                     color:'#52B6DF' }}>Skip</Text>
@@ -70,6 +120,7 @@ function Onboarding({params}) {
                        <Text style={{position:'absolute',
                                      top:50,
                                      fontStyle:'normal',
+                                     fontFamily:'Poppins_600SemiBold',
                                      fontWeight:'600',
                                      fontSize:24,
                                      lineHeight:28,
@@ -77,6 +128,7 @@ function Onboarding({params}) {
                        <Text style={{fontStyle:'normal',
                                      fontWeight:'normal',
                                      fontSize:13,
+                                     fontFamily:'Poppins_400Regular',
                                      lineHeight:22,
                                      letterSpacing:0.2,
                                      color:'#647488',
@@ -92,12 +144,14 @@ function Onboarding({params}) {
                        <Text style={{position:'absolute',
                                      top:50,
                                      fontStyle:'normal',
+                                     fontFamily:'Poppins_600SemiBold',
                                      fontWeight:'600',
                                      fontSize:24,
                                      lineHeight:28,
                                      color:'#0F172A'}}>Choose your favorite mentor</Text>
                        <Text style={{fontStyle:'normal',
                                      fontWeight:'normal',
+                                     fontFamily:'Poppins_400Regular',
                                      fontSize:13,
                                      lineHeight:22,
                                      letterSpacing:0.2,
